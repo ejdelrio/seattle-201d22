@@ -35,6 +35,7 @@ function multiply(a,b){ //eslint-disable-line
   return [mult, 'The product of ' + a + ' and ' + b + ' is ' + mult + '.'];
 }
 
+
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
 
@@ -61,7 +62,6 @@ function sumAndMultiply(a,b,c){ //eslint-disable-line
     a + ' and ' + b + ' and ' + c + ' sum to ' + mySum + '.',
     'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + myProduct + '.'
   ];
-
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -87,9 +87,10 @@ function sumArray(testArray){ //eslint-disable-line
     return a + b;
   }
   var mySum = testArray.reduce(add, 0);
-  console.log(mySum);
+
   return [mySum, testArray.join(',') + ' was passed in as an array of numbers, and ' + mySum + ' is their sum.'];
 }
+
 
 // Here is the test for sumArray(); uncomment it to run it
 
@@ -109,10 +110,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
-
+  var myArray = 1;
+  for (var i = 0, l = testArray.length; i < l; i ++) {
+    myArray = multiply(myArray, testArray[i])[0];
+  }
+  return [myArray, 'The numbers ' + testArray.join(',') + ' have a product of ' + myArray + '.'];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
