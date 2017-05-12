@@ -14,7 +14,7 @@ function sum(a,b){ //eslint-disable-line
   return [mySum, myMsg];
 }
 
-sum();
+sum(4, 7);
 
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
@@ -87,6 +87,7 @@ function sumArray(testArray){ //eslint-disable-line
     return a + b;
   }
   var mySum = testArray.reduce(add, 0);
+
   return [mySum, testArray.join(',') + ' was passed in as an array of numbers, and ' + mySum + ' is their sum.'];
 }
 
